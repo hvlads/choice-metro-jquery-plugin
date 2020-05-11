@@ -1,16 +1,15 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
-const minify = require('gulp-minify');
-var sass = require('gulp-sass');
-var minifyCSS = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
-var reload = browserSync.reload;
+const minify    = require('gulp-minify');
+var sass        = require('gulp-sass');
+var minifyCSS   = require('gulp-minify-css');
+var sourcemaps  = require('gulp-sourcemaps');
+var reload      = browserSync.reload;
 
 gulp.task('build-html', function () {
     return gulp.src('*.html')
         .pipe(reload({ stream:true }));
 });
-
 
 gulp.task('build-js', function () {
     return gulp.src('./src/*.js')
