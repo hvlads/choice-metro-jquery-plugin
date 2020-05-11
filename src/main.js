@@ -150,13 +150,10 @@
 
         var all_check = () => {
             $('.all_lines').on('click', (e) => {
-                //$(e.target).siblings().find
                 if (e.target.checked) {
-                    //console.log($(e.target).parent().parent().parent().find('input'))
                     $(e.target).parents('.line-metro').find('input').not('.all_lines').each((i, a) => {
                         $(self).find(`input.${$(a).attr('class')}`).prop('checked', true);
                     })
-                    //console.log(ch)
                 } else {
 
                     $(e.target).parents('.line-metro').find('input').not('.all_lines').each((i, a) => {
@@ -184,7 +181,7 @@
 
         var after_ajax = (metro) => {
             let st = stations(metro);
-            st.sort(compare)//.filter(onlyUnique);
+            st.sort(compare)// Todo: .filter(onlyUnique);
             all_metro = st;
             $('#stations-container').html(stations_template(st))
             let l = lines_template(metro)
