@@ -1,0 +1,208 @@
+$input-bg-color: #f2f2f2;
+$box-checked-color: #2196F3;
+$label-size: 16px;
+$gray: rgba(128, 128, 128, 0.24);
+
+.wrapper {
+  width: 460px;
+  margin: 100px auto;
+}
+
+#metro-wrapper-2020 {
+
+  .line-metro {
+    cursor: pointer;
+    line-height: 30px;
+
+    .fa {
+      margin-right: 10px;
+    }
+
+    .fa-angle-down {
+      display: none;
+    }
+
+    &.open {
+      .fa-angle-down {
+        display: inline-block;;
+      }
+
+      .fa-angle-right {
+        display: none;
+      }
+    }
+  }
+
+  @mixin scrollbar {
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray;
+      outline: 1px solid slategrey;
+    }
+  }
+
+  #stations-container {
+    max-height: 200px;
+    overflow-y: scroll;
+    @include scrollbar;
+  }
+
+  #lines-container {
+    max-height: 200px;
+    overflow-y: scroll;
+    display: none;
+
+    @include scrollbar;
+
+    .station {
+      display: none;
+    }
+  }
+
+  .color-span {
+    height: 5px;
+    width: 10px;
+    display: block;
+    margin-top: 12px;
+    margin-right: 10px;
+    float: right;
+
+  }
+
+  .toggle-button {
+    border: none;
+    margin: 2px;
+    padding: 6px 9px;
+    border-radius: 3px;
+    width: 45%;
+    cursor: pointer;
+
+    &.active {
+      background: #fff;
+      outline: none;
+    }
+
+    &:active, &:focus, &:hover {
+      outline: none;
+    }
+  }
+
+  .color-span-line {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+  }
+
+  #metro-input {
+    height: 25px;
+    width: 100%;
+    background-image: none;
+
+    &:active, &:focus, &:hover {
+      outline: none;
+    }
+  }
+
+  .lines-toggle {
+    height: 40px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: $gray;
+    border-radius: 3px;
+  }
+
+  .btn_selected {
+    z-index: 1;
+    border: none;
+    margin: 2px;
+    padding: 6px 9px;
+    background: $gray;
+    border-radius: 3px;
+
+    &:active, &:focus, &:hover {
+      border: none;
+      outline: none;
+    }
+
+    .fa {
+      color: gray;
+      margin-left: 5px;
+      cursor: pointer;
+
+      &:active, &:focus, &:hover {
+        border: none;
+        outline: none;
+      }
+
+    }
+  }
+
+
+  .checkbox-group {
+    display: block;
+    position: relative;
+    height: 30px;
+    line-height: 25px;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      margin: 0;
+      &:checked ~ .checkmark {
+        background: $box-checked-color;
+        &::after {
+          display: block;
+          left: 5px;
+          top: 2px;
+          width: 3px;
+          height: 5px;
+          border: solid #fff;
+          border-width: 0 2px 3px 0;
+          transform: rotate(45deg);
+          opacity: 1;
+
+        }
+
+      }
+
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      height: 15px;
+      width: 15px;
+      background: $input-bg-color;
+
+      &:hover {
+        background: darken($input-bg-color, 10%);
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        opacity: 0;
+        transition: opacity 200ms ease;
+
+      }
+
+    }
+
+  }
+
+}

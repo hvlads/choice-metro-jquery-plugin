@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="text/html; charset=windows-1251">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="dist/main.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div id="metro_moscow">
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="dist/main.js"></script>
+<script>
+    $('#metro_moscow').metro({
+        'placeholder': 'Выберите метро',
+        'callback': (selected_metro) => {
+            console.log(selected_metro)
+        }
+    });
+</script>
+</html>
