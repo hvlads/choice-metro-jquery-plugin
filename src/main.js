@@ -88,7 +88,6 @@
         }
 
         var lines_template = (metro) => {
-
             t = '';
             t += '<div class="lines_wrap">'
             metro.lines.forEach(line => {
@@ -108,8 +107,6 @@
             t += '</div>'
             return t;
         }
-
-
 
         var add_buttons = () => {
             let buttons = '';
@@ -138,7 +135,6 @@
             call(m);
         }
 
-
         var check = () => {
             $("input").not('.all_lines').change(function (e) {
                 let inp = e.target
@@ -151,6 +147,7 @@
                 _callback()
             });
         }
+
         var all_check = () => {
             $('.all_lines').on('click', (e) => {
                 //$(e.target).siblings().find
@@ -185,7 +182,6 @@
             return self.indexOf(value) === index;
         }
 
-
         var after_ajax = (metro) => {
             let st = stations(metro);
             st.sort(compare)//.filter(onlyUnique);
@@ -217,10 +213,8 @@
                 } else {
                     $('#stations-container .station').show()
                 }
-
             });
         }
-
         return this;
     };
 
