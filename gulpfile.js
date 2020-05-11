@@ -33,10 +33,7 @@ gulp.task('serve', function() {
 
     browserSync.init({
         server: "./"
-        // or
-        // proxy: 'yourserver.dev'
     });
-    //gulp.watch("*").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['build-html', 'build-css', 'build-js', 'serve'], function () {

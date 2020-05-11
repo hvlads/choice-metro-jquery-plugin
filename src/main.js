@@ -8,7 +8,6 @@
                 callback.call(this, metro);
             }
         }
-        
 
         var wrapper = '<div id="metro-wrapper-2020"></div>'
         var opts = $.extend({}, $.fn.metro.defaults, options);
@@ -221,7 +220,6 @@
 
             });
         }
-
 
         return this;
     };
